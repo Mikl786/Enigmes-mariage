@@ -17,11 +17,10 @@
       align-items: center;
       text-align: center;
       padding: 20px;
-      /* Bandes sang et or verticales */
       background: repeating-linear-gradient(
         90deg,
-        #D80027 0 80px,      /* Rouge sang */
-        #FFD100 80px 160px   /* Or */
+        #D80027 0 80px,
+        #FFD100 80px 160px
       );
       background-size: 160px 100%;
     }
@@ -32,16 +31,53 @@
       text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     }
     p {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       max-width: 600px;
       line-height: 1.6;
       margin-bottom: 2rem;
-      background: rgba(255,255,255,0.7);
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-      padding: 24px 8px;
-      text-shadow: 1px 1px 3px rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.85);
+      border-radius: 12px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+      padding: 20px;
       display: inline-block;
+      text-shadow: none;
+      color: #3B1F04;
+    }
+    input[type="text"] {
+      font-size: 1.3rem;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 2px solid #3B1F04;
+      width: 100px;
+      text-align: center;
+      margin-right: 12px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus {
+      border-color: #D80027;
+      box-shadow: 0 0 8px #D80027aa;
+    }
+    button {
+      background-color: #3B1F04;
+      color: #FFD100;
+      border: none;
+      padding: 10px 24px;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #5B3A07;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #3B1F04;
+      min-height: 1.5em;
     }
     footer {
       margin-top: auto;
@@ -65,8 +101,34 @@
     liées à la domination espagnole dans la région ?<br />
     <strong>Prends le dernier chiffre de cette année pour débuter ton code.</strong>
   </p>
+
+  <div>
+    <input type="text" id="reponse" maxlength="1" placeholder="Ton chiffre" aria-label="Réponse chiffre" />
+    <button onclick="verifierReponse()">J'ai trouvé la réponse</button>
+  </div>
+  <div id="message" role="alert" aria-live="polite"></div>
+
   <footer>
     Bonne chance, les Sang et Or comptent sur toi ! ⚽❤️💛
   </footer>
+
+  <script>
+    function verifierReponse(){
+      const bonneReponse = '4'; // dernier chiffre de 1924
+      const reponse = document.getElementById('reponse').value.trim();
+      const message = document.getElementById('message');
+
+      if(reponse === bonneReponse){
+        message.style.color = '#008000';
+        message.textContent = 'Bravo ! C’est le bon chiffre.';
+      } else if(reponse === ''){
+        message.style.color = '#D80027';
+        message.textContent = 'Merci d’entrer un chiffre.';
+      } else {
+        message.style.color = '#D80027';
+        message.textContent = 'Ce n’est pas le bon chiffre, réessaie !';
+      }
+    }
+  </script>
 </body>
 </html>
