@@ -6,64 +6,65 @@
   <title>Énigme 1 - RC Lens</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #D80027 30%, #FFD100 70%);
-      color: #3B1F04;
+      min-height: 100vh;
       margin: 0;
-      height: 100vh;
+      color: #3B1F04;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding: 20px;
-      animation: backgroundShift 10s ease infinite alternate;
+      /* Bandes sang et or verticales */
+      background: repeating-linear-gradient(
+        90deg,
+        #D80027 0 80px,      /* Rouge sang */
+        #FFD100 80px 160px   /* Or */
+      );
+      background-size: 160px 100%;
     }
-
-    @keyframes backgroundShift {
-      0% {background-position: 0% 50%;}
-      100% {background-position: 100% 50%;}
-    }
-
     h1 {
       font-size: 3rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     }
-
     p {
       font-size: 1.5rem;
       max-width: 600px;
       line-height: 1.6;
       margin-bottom: 2rem;
-      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
+      background: rgba(255,255,255,0.7);
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      padding: 24px 8px;
+      text-shadow: 1px 1px 3px rgba(255,255,255,0.5);
+      display: inline-block;
     }
-
     footer {
       margin-top: auto;
       padding: 15px 0;
       width: 100%;
-      background: rgba(59, 31, 4, 0.8);
+      background: rgba(59, 31, 4, 0.85);
       color: #FFD100;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       text-align: center;
       font-style: italic;
-      box-shadow: inset 0 1px 3px rgba(255,255,255,0.3);
+      letter-spacing: 0.5px;
+      box-shadow: inset 0 1px 3px rgba(255,255,255,0.25);
     }
   </style>
 </head>
 <body>
   <h1>Énigme 1 : Les couleurs du RC Lens</h1>
   <p>
-    Les couleurs du RC Lens sont <strong>"Sang et Or"</strong>.<br />
+    Les couleurs du RC Lens sont <strong>"Sang et Or"</strong>.<br />
     En quelle année <strong>EXACTEMENT</strong> le club a-t-il officiellement adopté ces couleurs,<br />
     liées à la domination espagnole dans la région ?<br />
     <strong>Prends le dernier chiffre de cette année pour débuter ton code.</strong>
   </p>
-
   <footer>
     Bonne chance, les Sang et Or comptent sur toi ! ⚽❤️💛
   </footer>
