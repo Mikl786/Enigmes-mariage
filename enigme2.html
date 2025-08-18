@@ -113,7 +113,7 @@
     Attention : <u>Il faudra utiliser le <b>premier chiffre</b> de ce nombre comme code de la boîte !</u>
   </div>
   <div>
-    <input type="text" id="reponse" maxlength="1" placeholder="Chiffre" aria-label="Réponse chiffre" />
+    <input type="text" id="reponse" maxlength="5" placeholder="Nombre complet" aria-label="Réponse nombre" />
     <button onclick="verifierReponse()">Valider</button>
   </div>
   <div id="message" role="alert" aria-live="polite"></div>
@@ -122,18 +122,18 @@
   </footer>
   <script>
     function verifierReponse() {
-      const bonneReponse = '3'; // Premier chiffre du nombre 38223
+      const bonneReponse = '38223'; // nombre complet attendu
       const reponse = document.getElementById('reponse').value.trim();
       const message = document.getElementById('message');
       if (reponse === bonneReponse) {
         message.className = "good";
-        message.textContent = "Bravo ! C’est le bon chiffre.";
+        message.textContent = "Bravo ! C’est la bonne réponse.";
       } else if (reponse === '') {
         message.className = "bad";
-        message.textContent = "Merci d’entrer un chiffre.";
+        message.textContent = "Merci d’entrer un nombre.";
       } else {
         message.className = "bad";
-        message.textContent = "Ce n’est pas le bon chiffre, réessaie !";
+        message.textContent = "Ce n’est pas la bonne réponse, réessaie !";
       }
     }
   </script>
