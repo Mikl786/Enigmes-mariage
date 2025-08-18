@@ -17,67 +17,72 @@
       align-items: center;
       text-align: center;
       padding: 20px;
-      background: repeating-linear-gradient(
-        90deg,
-        #D80027 0 80px,
-        #FFD100 80px 160px
-      );
-      background-size: 160px 100%;
+      /* Dégradé radial sang et or */
+      background: radial-gradient(circle at 60% 30%, #FFD100 0%, #FFD100 40%, #D80027 100%);
+      transition: background 0.8s;
     }
     h1 {
       font-size: 3rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
     }
     p {
       font-size: 1.4rem;
-      max-width: 600px;
+      max-width: 640px;
       line-height: 1.6;
-      margin-bottom: 2rem;
-      background: rgba(255,255,255,0.85);
-      border-radius: 12px;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-      padding: 20px;
+      margin-bottom: 2.2rem;
+      background: rgba(255,255,255,0.9);
+      border-radius: 14px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.09);
+      padding: 24px 14px;
       display: inline-block;
       text-shadow: none;
       color: #3B1F04;
     }
+    .code-tip {
+      color: #D80027;
+      font-size: 1.12rem;
+      margin-top: 0.8em;
+      margin-bottom: 1.6em;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
     input[type="text"] {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       padding: 8px 12px;
       border-radius: 8px;
       border: 2px solid #3B1F04;
-      width: 60px;
+      width: 130px;
       text-align: center;
       margin-right: 12px;
       outline: none;
-      transition: border-color 0.3s ease;
+      transition: border-color 0.3s;
       background: #fffbe7;
     }
     input[type="text"]:focus {
       border-color: #FFD100;
-      box-shadow: 0 0 8px #FFD100aa;
+      box-shadow: 0 0 8px #FFD10088;
     }
     button {
       background-color: #3B1F04;
       color: #FFD100;
       border: none;
       padding: 10px 24px;
-      font-size: 1.2rem;
+      font-size: 1.13rem;
       border-radius: 30px;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      transition: background-color 0.3s;
     }
     button:hover {
       background-color: #5B3A07;
     }
     #message {
       margin-top: 20px;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 600;
-      min-height: 1.5em;
+      min-height: 1.7em;
     }
     .good {
       color: #008000;
@@ -91,11 +96,11 @@
       width: 100%;
       background: rgba(59, 31, 4, 0.85);
       color: #FFD100;
-      font-size: 0.95rem;
+      font-size: 0.97rem;
       text-align: center;
       font-style: italic;
       letter-spacing: 0.5px;
-      box-shadow: inset 0 1px 3px rgba(255,255,255,0.25);
+      box-shadow: inset 0 1px 4px rgba(255,255,255,0.22);
     }
   </style>
 </head>
@@ -103,25 +108,23 @@
   <h1>Énigme 2 : La capacité du stade Bollaert-Delelis</h1>
   <p>
     Combien de places assises compte précisément le stade Bollaert-Delelis en 2025 ?<br />
-    <strong>Entre le premier chiffre de ce nombre pour continuer ton code.</strong>
   </p>
-
+  <div class="code-tip">
+    Attention : <u>Il faudra utiliser le <b>premier chiffre</b> de ce nombre comme code de la boîte !</u>
+  </div>
   <div>
     <input type="text" id="reponse" maxlength="1" placeholder="Chiffre" aria-label="Réponse chiffre" />
     <button onclick="verifierReponse()">Valider</button>
   </div>
   <div id="message" role="alert" aria-live="polite"></div>
-
   <footer>
     Bonne chance, les Sang et Or comptent sur toi ! ⚽❤️💛
   </footer>
-
   <script>
     function verifierReponse() {
-      const bonneReponse = '3'; // Premier chiffre de 38223
+      const bonneReponse = '3'; // Premier chiffre du nombre 38223
       const reponse = document.getElementById('reponse').value.trim();
       const message = document.getElementById('message');
-
       if (reponse === bonneReponse) {
         message.className = "good";
         message.textContent = "Bravo ! C’est le bon chiffre.";
