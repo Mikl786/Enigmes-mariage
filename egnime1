@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Énigme 1 - RC Lens</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #D80027; /* Rouge sang */
+      color: #FFD100; /* Or */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 5px #800000;
+    }
+    p {
+      font-size: 1.5em;
+      max-width: 600px;
+      line-height: 1.6;
+      text-shadow: 1px 1px 3px #800000;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9em;
+      color: #ffd166cc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Énigme 1 : Les couleurs du RC Lens</h1>
+  <p>
+    Les couleurs du RC Lens sont "Sang et Or".<br />
+    En quelle année EXACTEMENT le club a-t-il officiellement adopté ces couleurs, liées à la domination espagnole dans la région ?<br />
+    <strong>Prends le dernier chiffre de cette année pour débuter ton code.</strong>
+  </p>
+  <footer>Bonne chance !</footer>
+</body>
+</html
