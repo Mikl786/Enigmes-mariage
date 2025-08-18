@@ -109,7 +109,7 @@
     En quelle année Lens a-t-il battu Arsenal à Wembley lors de la Ligue des champions ?<br />
   </p>
   <div class="code-tip">
-    Attention : <u>Additionne les deux derniers chiffres de l'année pour trouver le chiffre du code.</u>
+    Attention : <u>Prends le <b>3e chiffre</b> (le chiffre des dizaines) de cette année comme chiffre du code.</u>
   </div>
   <div>
     <input type="text" id="reponse" maxlength="4" placeholder="Année 4 chiffres" aria-label="Réponse année" />
@@ -121,13 +121,12 @@
   </footer>
   <script>
     function verifierReponse() {
-      const bonneReponse = '1998'; // année complète
+      const bonneReponse = '1998'; // année complète attendue
       const reponse = document.getElementById('reponse').value.trim();
       const message = document.getElementById('message');
-
       if (reponse === bonneReponse) {
         message.className = "good";
-        message.textContent = "Bravo ! C’est la bonne année. Le chiffre du code est " + (parseInt(reponse.slice(-2, -1)) + parseInt(reponse.slice(-1))) + ".";
+        message.textContent = "Bravo ! C’est la bonne année. Souviens-toi de prendre le 3e chiffre pour ton code.";
       } else if (reponse === '') {
         message.className = "bad";
         message.textContent = "Merci d’entrer une année.";
