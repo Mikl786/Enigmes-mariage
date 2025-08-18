@@ -42,35 +42,6 @@
       text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
     }
 
-    button {
-      background-color: #3B1F04;
-      color: #FFD100;
-      border: none;
-      padding: 12px 24px;
-      font-size: 1rem;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #5B3A07;
-    }
-
-    #indice {
-      margin-top: 20px;
-      font-size: 1.2rem;
-      color: #3B1F04;
-      background-color: #FFF3B0;
-      border-radius: 10px;
-      padding: 15px;
-      max-width: 600px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      display: none;
-      text-shadow: none;
-    }
-
     footer {
       margin-top: auto;
       padding: 15px 0;
@@ -92,24 +63,9 @@
     liées à la domination espagnole dans la région ?<br />
     <strong>Prends le dernier chiffre de cette année pour débuter ton code.</strong>
   </p>
-  <button onclick="toggleIndice()">Afficher un indice</button>
-  <div id="indice">
-    Pense à une année du début du XXe siècle, précisément dans les années 1920...
-  </div>
 
   <footer>
     Bonne chance, les Sang et Or comptent sur toi ! ⚽❤️💛
   </footer>
-
-  <script>
-    function toggleIndice() {
-      const indiceDiv = document.getElementById('indice');
-      if (indiceDiv.style.display === 'none' || indiceDiv.style.display === '') {
-        indiceDiv.style.display = 'block';
-      } else {
-        indiceDiv.style.display = 'none';
-      }
-    }
-  </script>
 </body>
 </html>
