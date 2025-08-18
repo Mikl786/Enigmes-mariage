@@ -5,44 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Énigme 1 - RC Lens</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #D80027; /* Rouge sang */
-      color: #FFD100; /* Or */
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #D80027 30%, #FFD100 70%);
+      color: #3B1F04;
+      margin: 0;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
       text-align: center;
       padding: 20px;
+      animation: backgroundShift 10s ease infinite alternate;
     }
+
+    @keyframes backgroundShift {
+      0% {background-position: 0% 50%;}
+      100% {background-position: 100% 50%;}
+    }
+
     h1 {
-      font-size: 2.5em;
+      font-size: 3rem;
+      font-weight: 700;
       margin-bottom: 1rem;
-      text-shadow: 2px 2px 5px #800000;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
+
     p {
-      font-size: 1.5em;
+      font-size: 1.5rem;
       max-width: 600px;
       line-height: 1.6;
-      text-shadow: 1px 1px 3px #800000;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
     }
+
+    button {
+      background-color: #3B1F04;
+      color: #FFD100;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #5B3A07;
+    }
+
+    #indice {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #3B1F04;
+      background-color: #FFF3B0;
+      border-radius: 10px;
+      padding: 15px;
+      max-width: 600px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: none;
+      text-shadow: none;
+    }
+
     footer {
-      margin-top: 3rem;
-      font-size: 0.9em;
-      color: #ffd166cc;
+      margin-top: auto;
+      padding: 15px 0;
+      width: 100%;
+      background: rgba(59, 31, 4, 0.8);
+      color: #FFD100;
+      font-size: 0.9rem;
+      text-align: center;
+      font-style: italic;
+      box-shadow: inset 0 1px 3px rgba(255,255,255,0.3);
     }
   </style>
 </head>
 <body>
   <h1>Énigme 1 : Les couleurs du RC Lens</h1>
   <p>
-    Les couleurs du RC Lens sont "Sang et Or".<br />
-    En quelle année EXACTEMENT le club a-t-il officiellement adopté ces couleurs, liées à la domination espagnole dans la région ?<br />
+    Les couleurs du RC Lens sont <strong>"Sang et Or"</strong>.<br />
+    En quelle année <strong>EXACTEMENT</strong> le club a-t-il officiellement adopté ces couleurs,<br />
+    liées à la domination espagnole dans la région ?<br />
     <strong>Prends le dernier chiffre de cette année pour débuter ton code.</strong>
   </p>
-  <footer>Bonne chance !</footer>
+  <button onclick="toggleIndice()">Afficher un indice</button>
+  <div id="indice">
+    Pense à une année du début du XXe siècle, précisément dans les années 1920...
+  </div>
+
+  <footer>
+    Bonne chance, les Sang et Or comptent sur toi ! ⚽❤️💛
+  </footer>
+
+  <script>
+    function toggleIndice() {
+      const indiceDiv = document.getElementById('indice');
+      if (indiceDiv.style.display === 'none' || indiceDiv.style.display === '') {
+        indiceDiv.style.display = 'block';
+      } else {
+        indiceDiv.style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>
