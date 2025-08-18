@@ -48,7 +48,7 @@
       padding: 8px 12px;
       border-radius: 8px;
       border: 2px solid #3B1F04;
-      width: 100px;
+      width: 140px;
       text-align: center;
       margin-right: 12px;
       outline: none;
@@ -99,11 +99,11 @@
     Les couleurs du RC Lens sont <strong>"Sang et Or"</strong>.<br />
     En quelle année <strong>EXACTEMENT</strong> le club a-t-il officiellement adopté ces couleurs,<br />
     liées à la domination espagnole dans la région ?<br />
-    <strong>Prends le dernier chiffre de cette année pour débuter ton code.</strong>
+    <strong>Entre l'année complète pour débuter ton code.</strong>
   </p>
 
   <div>
-    <input type="text" id="reponse" maxlength="1" placeholder="Ton chiffre" aria-label="Réponse chiffre" />
+    <input type="text" id="reponse" maxlength="4" placeholder="Année 4 chiffres" aria-label="Réponse année" />
     <button onclick="verifierReponse()">J'ai trouvé la réponse</button>
   </div>
   <div id="message" role="alert" aria-live="polite"></div>
@@ -114,19 +114,19 @@
 
   <script>
     function verifierReponse(){
-      const bonneReponse = '4'; // dernier chiffre de 1924
+      const bonneReponse = '1924'; // année complète
       const reponse = document.getElementById('reponse').value.trim();
       const message = document.getElementById('message');
 
       if(reponse === bonneReponse){
         message.style.color = '#008000';
-        message.textContent = 'Bravo ! C’est le bon chiffre.';
+        message.textContent = 'Bravo ! C’est la bonne année.';
       } else if(reponse === ''){
         message.style.color = '#D80027';
-        message.textContent = 'Merci d’entrer un chiffre.';
+        message.textContent = 'Merci d’entrer une année.';
       } else {
         message.style.color = '#D80027';
-        message.textContent = 'Ce n’est pas le bon chiffre, réessaie !';
+        message.textContent = 'Ce n’est pas la bonne année, réessaie !';
       }
     }
   </script>
