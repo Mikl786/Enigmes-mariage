@@ -3,45 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Énigme 1 - RC Lens</title>
+  <title>Énigme 2 - Avion</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
     body {
       font-family: 'Roboto', sans-serif;
       min-height: 100vh;
       margin: 0;
-      color: #3B1F04;
+      color: #002244;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding: 20px;
-      /* Dégradé radial sang et or */
-      background: radial-gradient(circle at 60% 30%, #FFD100 0%, #FFD100 40%, #D80027 100%);
+      /* Nouveau fond dégradé "ciel et nuages" */
+      background: linear-gradient(to bottom, #87CEEB 0%, #f0f8ff 100%);
       transition: background 0.8s;
     }
     h1 {
-      font-size: 3rem;
+      font-size: 2.9rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.15);
     }
     p {
       font-size: 1.4rem;
       max-width: 640px;
       line-height: 1.6;
       margin-bottom: 2.2rem;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.92);
       border-radius: 14px;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.09);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
       padding: 24px 14px;
       display: inline-block;
       text-shadow: none;
-      color: #3B1F04;
+      color: #002244;
     }
     .code-tip {
-      color: #D80027;
+      color: #0055aa;
       font-size: 1.12rem;
       margin-top: 0.8em;
       margin-bottom: 1.6em;
@@ -52,21 +52,21 @@
       font-size: 1.2rem;
       padding: 8px 12px;
       border-radius: 8px;
-      border: 2px solid #3B1F04;
+      border: 2px solid #002244;
       width: 130px;
       text-align: center;
       margin-right: 12px;
       outline: none;
       transition: border-color 0.3s;
-      background: #fffbe7;
+      background: #ffffff;
     }
     input[type="text"]:focus {
-      border-color: #FFD100;
-      box-shadow: 0 0 8px #FFD10088;
+      border-color: #00aaff;
+      box-shadow: 0 0 8px #00aaff88;
     }
     button {
-      background-color: #3B1F04;
-      color: #FFD100;
+      background-color: #002244;
+      color: #ffffff;
       border: none;
       padding: 10px 24px;
       font-size: 1.13rem;
@@ -76,7 +76,7 @@
       transition: background-color 0.3s;
     }
     button:hover {
-      background-color: #5B3A07;
+      background-color: #004488;
     }
     #message {
       margin-top: 20px;
@@ -94,48 +94,48 @@
       margin-top: auto;
       padding: 15px 0;
       width: 100%;
-      background: rgba(59, 31, 4, 0.85);
-      color: #FFD100;
-      font-size: 0.97rem;
+      background: rgba(0, 34, 68, 0.9);
+      color: #ffffff;
+      font-size: 0.95rem;
       text-align: center;
       font-style: italic;
       letter-spacing: 0.5px;
-      box-shadow: inset 0 1px 4px rgba(255,255,255,0.22);
+      box-shadow: inset 0 1px 4px rgba(255,255,255,0.25);
     }
   </style>
 </head>
 <body>
-  <h1>Énigme 1 : Les couleurs du RC Lens</h1>
+  <h1>Énigme 2 : Le voyage de Loïc</h1>
   <p>
-    Les couleurs du RC Lens sont <strong>"Sang et Or"</strong>.<br />
-    En quelle année <strong>EXACTEMENT</strong> le club a-t-il officiellement adopté ces couleurs,<br />
-    liées à la domination espagnole dans la région ?<br />
+    Lors de son voyage Paris - New York, Loïc avait une place bien précise dans l’avion.<br />
+    <strong>Quel était son numéro de siège exact ?</strong> ✈️<br /><br />
+    Une fois trouvé, <strong>additionne les chiffres entre eux</strong> pour obtenir ton premier chiffre secret.
   </p>
   <div class="code-tip">
-    Attention : <u>Il faudra utiliser le <b>dernier chiffre</b> de l'année trouvée comme code de la boîte !</u>
+    Exemple : si le siège est <b>53</b>, alors <b>5 + 3 = 8</b>, ton premier chiffre.
   </div>
   <div>
-    <input type="text" id="reponse" maxlength="4" placeholder="Année 4 chiffres" aria-label="Réponse année" />
+    <input type="text" id="reponse" maxlength="2" placeholder="N° de siège (ex: 53)" aria-label="Numéro de siège" />
     <button onclick="verifierReponse()">Valider</button>
   </div>
   <div id="message" role="alert" aria-live="polite"></div>
   <footer>
-    Bonne chance, les Sang et Or comptent sur toi ! ⚽❤️💛
+    Bonne chance, le voyage ne fait que commencer ! 🌍✈️
   </footer>
   <script>
     function verifierReponse() {
-      const bonneReponse = '1924'; // année complète
+      const bonneReponse = '53'; // numéro exact du siège
       const reponse = document.getElementById('reponse').value.trim();
       const message = document.getElementById('message');
       if (reponse === bonneReponse) {
         message.className = "good";
-        message.textContent = "Bravo ! C’est la bonne année. Retire le dernier chiffre ('4') pour ton code.";
+        message.textContent = "Bravo ! Le siège était bien le 53. Additionne 5 + 3 = 8, cela te donne ton premier chiffre.";
       } else if (reponse === '') {
         message.className = "bad";
-        message.textContent = "Merci d’entrer une année.";
+        message.textContent = "Merci d’entrer un numéro de siège.";
       } else {
         message.className = "bad";
-        message.textContent = "Ce n’est pas la bonne année, réessaie !";
+        message.textContent = "Ce n’était pas ce siège, réessaie !";
       }
     }
   </script>
