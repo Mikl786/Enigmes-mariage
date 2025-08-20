@@ -2,14 +2,14 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Énigme : Vol vers New York</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Énigme : Vol vers New York</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
     body {
       min-height: 100vh;
       margin: 0;
-      padding: 0;
+      padding: 20px 15px;
       font-family: 'Roboto', sans-serif;
       color: #262626;
       display: flex;
@@ -17,50 +17,55 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      /* Fond New York skyline généré */
-      background: url('https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/505361b3-0d01-4474-8b6e-6e96d281cd8b.png') center bottom/cover no-repeat,
-      linear-gradient(to top,#45407F 0%, #f2f6fa 100%);
+      background:
+        url('https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/505361b3-0d01-4474-8b6e-6e96d281cd8b.png') center bottom/cover no-repeat,
+        linear-gradient(to top,#45407F 0%, #f2f6fa 100%);
       position: relative;
       overflow: hidden;
     }
     h1 {
-      font-size: 2.8rem;
+      font-size: 2rem;
       font-weight: 700;
       margin-bottom: 1rem;
       text-shadow: 2px 2px 6px rgba(0,0,0,0.12);
+      max-width: 320px;
+      line-height: 1.1;
     }
     p {
-      font-size: 1.33rem;
-      max-width: 640px;
-      line-height: 1.6;
-      margin-bottom: 2.2rem;
+      font-size: 1.15rem;
+      max-width: 320px;
+      line-height: 1.5;
+      margin-bottom: 1.8rem;
       background: rgba(255,255,255,0.92);
       border-radius: 14px;
       box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-      padding: 22px 14px;
+      padding: 20px 16px;
       display: inline-block;
-      text-shadow: none;
       color: #262626;
+      text-shadow: none;
     }
     .code-tip {
       color: #3949ab;
-      font-size: 1.09rem;
+      font-size: 1rem;
       margin-top: 0.2em;
-      margin-bottom: 1.6em;
+      margin-bottom: 1.5em;
       font-weight: 700;
-      letter-spacing: 0.2px;
+      letter-spacing: 0.3px;
+      max-width: 320px;
     }
     input[type="text"] {
       font-size: 1.2rem;
-      padding: 8px 12px;
+      padding: 10px 16px;
       border-radius: 8px;
       border: 2px solid #262626;
-      width: 130px;
+      width: 100%;
+      max-width: 160px;
       text-align: center;
-      margin-right: 12px;
+      margin-right: 10px;
       outline: none;
       transition: border-color 0.3s;
       background: #fafcff;
+      box-sizing: border-box;
     }
     input[type="text"]:focus {
       border-color: #5b7fa4;
@@ -70,21 +75,28 @@
       background-color: #45407F;
       color: #fff;
       border: none;
-      padding: 10px 24px;
-      font-size: 1.14rem;
+      padding: 12px 28px;
+      font-size: 1.15rem;
       border-radius: 30px;
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(27,21,61,0.13);
       transition: background-color 0.3s;
+      font-weight: 700;
+      margin-top: 12px;
+      min-width: 120px;
     }
     button:hover {
       background-color: #6a8cd9;
     }
     #message {
-      margin-top: 20px;
-      font-size: 1.15rem;
+      margin-top: 22px;
+      font-size: 1rem;
       font-weight: 600;
       min-height: 1.7em;
+      max-width: 320px;
+      color: #262626;
+      text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+      word-wrap: break-word;
     }
     .good {
       color: #008000;
@@ -94,15 +106,36 @@
     }
     footer {
       margin-top: auto;
-      padding: 13px 0 8px 0;
+      padding: 14px 0 10px 0;
       width: 100%;
       background: rgba(69, 64, 127, 0.97);
       color: #eae8ec;
-      font-size: 0.97rem;
+      font-size: 1rem;
       text-align: center;
       font-style: italic;
       letter-spacing: 0.4px;
       box-shadow: 0 -1px 4px rgba(0,0,0,0.05);
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (min-width: 480px) {
+      body {
+        padding: 20px 40px;
+      }
+      h1 {
+        font-size: 2.4rem;
+        max-width: 480px;
+      }
+      p, .code-tip, #message, footer {
+        max-width: 480px;
+      }
+      input[type="text"] {
+        max-width: 180px;
+      }
+      button {
+        margin-top: 0;
+      }
     }
   </style>
 </head>
