@@ -2,86 +2,101 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Énigme 3 - RC Lens</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Énigme 3 : Concert d’Aldebert</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
     body {
-      font-family: 'Roboto', sans-serif;
       min-height: 100vh;
       margin: 0;
-      color: #3B1F04;
+      padding: 20px 15px;
+      font-family: 'Roboto', sans-serif;
+      color: #262626;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 20px;
-      background: radial-gradient(circle at 60% 30%, #FFD100 0%, #FFD100 40%, #D80027 100%);
-      transition: background 0.8s;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85));
+      position: relative;
+      overflow: hidden;
     }
     h1 {
-      font-size: 3rem;
+      font-size: 2rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.12);
+      max-width: 320px;
+      line-height: 1.1;
     }
     p {
-      font-size: 1.4rem;
-      max-width: 640px;
-      line-height: 1.6;
-      margin-bottom: 2.2rem;
-      background: rgba(255,255,255,0.9);
+      font-size: 1.15rem;
+      max-width: 320px;
+      line-height: 1.5;
+      margin-bottom: 1.8rem;
+      background: rgba(255,255,255,0.92);
       border-radius: 14px;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.09);
-      padding: 24px 14px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+      padding: 20px 16px;
       display: inline-block;
+      color: #262626;
       text-shadow: none;
-      color: #3B1F04;
     }
     .code-tip {
-      color: #D80027;
-      font-size: 1.12rem;
-      margin-top: 0.8em;
-      margin-bottom: 1.6em;
+      color: #3949ab;
+      font-size: 1rem;
+      margin-top: 0.2em;
+      margin-bottom: 1.5em;
       font-weight: 700;
       letter-spacing: 0.3px;
+      max-width: 320px;
     }
     input[type="text"] {
       font-size: 1.2rem;
-      padding: 8px 12px;
+      padding: 10px 16px;
       border-radius: 8px;
-      border: 2px solid #3B1F04;
-      width: 130px;
+      border: 2px solid #262626;
+      width: 100%;
+      max-width: 160px;
       text-align: center;
-      margin-right: 12px;
+      margin-right: 10px;
       outline: none;
       transition: border-color 0.3s;
-      background: #fffbe7;
+      background: #fafcff;
+      box-sizing: border-box;
     }
     input[type="text"]:focus {
-      border-color: #FFD100;
-      box-shadow: 0 0 8px #FFD10088;
+      border-color: #5b7fa4;
+      box-shadow: 0 0 8px #5b7fa488;
+      background: #fff;
     }
     button {
-      background-color: #3B1F04;
-      color: #FFD100;
+      background-color: #45407F;
+      color: #fff;
       border: none;
-      padding: 10px 24px;
-      font-size: 1.13rem;
+      padding: 12px 28px;
+      font-size: 1.15rem;
       border-radius: 30px;
       cursor: pointer;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      box-shadow: 0 4px 12px rgba(27,21,61,0.13);
       transition: background-color 0.3s;
+      font-weight: 700;
+      margin-top: 12px;
+      min-width: 120px;
     }
     button:hover {
-      background-color: #5B3A07;
+      background-color: #6a8cd9;
     }
     #message {
-      margin-top: 20px;
-      font-size: 1.2rem;
+      margin-top: 22px;
+      font-size: 1rem;
       font-weight: 600;
       min-height: 1.7em;
+      max-width: 320px;
+      color: #262626;
+      text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+      word-wrap: break-word;
     }
     .good {
       color: #008000;
@@ -91,48 +106,52 @@
     }
     footer {
       margin-top: auto;
-      padding: 15px 0;
+      padding: 14px 0 10px 0;
       width: 100%;
-      background: rgba(59, 31, 4, 0.85);
-      color: #FFD100;
-      font-size: 0.97rem;
+      background: rgba(69, 64, 127, 0.97);
+      color: #eae8ec;
+      font-size: 1rem;
       text-align: center;
       font-style: italic;
-      letter-spacing: 0.5px;
-      box-shadow: inset 0 1px 4px rgba(255,255,255,0.22);
+      letter-spacing: 0.4px;
+      box-shadow: 0 -1px 4px rgba(0,0,0,0.05);
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </head>
 <body>
-  <h1>Énigme 3 : L’exploit européen</h1>
+  <h1>Énigme 3 : Concert d’Aldebert</h1>
   <p>
-    En quelle année Lens a-t-il battu Arsenal à Wembley lors de la Ligue des champions ?<br />
+    Quel est le numéro de la place du concert d'Aldebert où vous êtes allé à Amiens ?<br />
+    <strong>Donne le numéro exact.</strong>
   </p>
   <div class="code-tip">
-    Attention : <u>Prends le <b>3e chiffre</b> (le chiffre des dizaines) de cette année comme chiffre du code.</u>
+    Additionne le résultat et ce chiffre sera ton troisième chiffre pour la boîte à clé.
   </div>
   <div>
-    <input type="text" id="reponse" maxlength="4" placeholder="Année 4 chiffres" aria-label="Réponse année" />
+    <input type="text" id="reponse" maxlength="2" placeholder="N° de place" aria-label="Numéro de place" />
     <button onclick="verifierReponse()">Valider</button>
   </div>
   <div id="message" role="alert" aria-live="polite"></div>
   <footer>
-    Bonne chance, les Sang et Or comptent sur toi ! ⚽❤️💛
+    Bonne chance pour cette énigme ! 🎵🎤
   </footer>
   <script>
     function verifierReponse() {
-      const bonneReponse = '1998'; // année complète attendue
-      const reponse = document.getElementById('reponse').value.trim();
+      const bonneReponse = '36';
       const message = document.getElementById('message');
+      const reponse = document.getElementById('reponse').value.trim();
       if (reponse === bonneReponse) {
         message.className = "good";
-        message.textContent = "Bravo ! C’est la bonne année. Souviens-toi de prendre le 3e chiffre pour ton code.";
+        message.textContent = "Bonne réponse ! Additionne 3 + 6 et ce chiffre sera ton troisième chiffre pour la boîte à clé.";
       } else if (reponse === '') {
         message.className = "bad";
-        message.textContent = "Merci d’entrer une année.";
+        message.textContent = "Merci d’entrer le numéro de place.";
       } else {
         message.className = "bad";
-        message.textContent = "Ce n’est pas la bonne année, réessaie !";
+        message.textContent = "Ce n’est pas le bon numéro, réessaie !";
       }
     }
   </script>
