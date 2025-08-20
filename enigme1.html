@@ -3,38 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Énigme 2 - New York</title>
+  <title>Énigme : Vol vers New York</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
     body {
-      font-family: 'Roboto', sans-serif;
       min-height: 100vh;
       margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
       color: #262626;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 20px;
-      /* Dégradé "ciel de New York" */
-      background: linear-gradient(to top, #34324a 0%, #5b7fa4 35%, #eae8ec 100%);
+      /* Fond New York skyline généré */
+      background: url('https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/505361b3-0d01-4474-8b6e-6e96d281cd8b.png') center bottom/cover no-repeat,
+      linear-gradient(to top,#45407F 0%, #f2f6fa 100%);
       position: relative;
-      transition: background 0.8s;
       overflow: hidden;
     }
     h1 {
       font-size: 2.8rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.11);
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.12);
     }
     p {
       font-size: 1.33rem;
       max-width: 640px;
       line-height: 1.6;
       margin-bottom: 2.2rem;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.92);
       border-radius: 14px;
       box-shadow: 0 3px 15px rgba(0,0,0,0.1);
       padding: 22px 14px;
@@ -67,7 +67,7 @@
       box-shadow: 0 0 8px #5b7fa488;
     }
     button {
-      background-color: #34324a;
+      background-color: #45407F;
       color: #fff;
       border: none;
       padding: 10px 24px;
@@ -78,7 +78,7 @@
       transition: background-color 0.3s;
     }
     button:hover {
-      background-color: #4d478c;
+      background-color: #6a8cd9;
     }
     #message {
       margin-top: 20px;
@@ -92,27 +92,17 @@
     .bad {
       color: #D80027;
     }
-    .skyline {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100vw;
-      height: 140px;
-      z-index: 0;
-      pointer-events: none;
-      background: transparent;
-    }
     footer {
       margin-top: auto;
       padding: 13px 0 8px 0;
       width: 100%;
-      background: rgba(52, 50, 74, 0.98);
+      background: rgba(69, 64, 127, 0.97);
       color: #eae8ec;
       font-size: 0.97rem;
       text-align: center;
       font-style: italic;
       letter-spacing: 0.4px;
-      box-shadow: 0 -1px 4px rgba(0,0,0,0.08);
+      box-shadow: 0 -1px 4px rgba(0,0,0,0.05);
     }
   </style>
 </head>
@@ -133,28 +123,6 @@
   <footer>
     New York t’attend ! 🗽
   </footer>
-  <!-- SVG silhouette simple de New York -->
-  <svg class="skyline" viewBox="0 0 1200 140" preserveAspectRatio="none">
-      <rect width="1200" height="140" fill="#34324a"/>
-      <rect x="60" y="55" width="45" height="85" fill="#47436c"/>
-      <rect x="110" y="90" width="40" height="50" fill="#5b7fa4"/>
-      <rect x="280" y="60" width="58" height="80" fill="#47436c"/>
-      <rect x="400" y="75" width="32" height="65" fill="#5b7fa4"/>
-      <rect x="445" y="95" width="30" height="45" fill="#a7bde2"/>
-      <rect x="500" y="80" width="17" height="60" fill="#5b7fa4"/>
-      <rect x="540" y="30" width="38" height="110" fill="#f6ce7f"/>
-      <rect x="575" y="90" width="18" height="50" fill="#a7bde2"/>
-      <rect x="655" y="70" width="23" height="70" fill="#f6ce7f"/>
-      <rect x="700" y="92" width="55" height="48" fill="#48486c"/>
-      <rect x="775" y="70" width="18" height="68" fill="#a7bde2"/>
-      <rect x="820" y="40" width="24" height="100" fill="#47436c"/>
-      <rect x="855" y="98" width="45" height="42" fill="#5b7fa4"/>
-      <rect x="950" y="67" width="28" height="73" fill="#a7bde2"/>
-      <rect x="1020" y="83" width="19" height="57" fill="#5b7fa4"/>
-      <rect x="1100" y="98" width="36" height="42" fill="#47436c"/>
-      <rect x="1070" y="60" width="23" height="79" fill="#f6ce7f"/>
-      <polygon points="822,40 834,12 846,40" fill="#eae8ec"/>
-  </svg>
   <script>
     function verifierReponse() {
       const bonneReponse = '53';
