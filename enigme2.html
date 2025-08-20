@@ -3,84 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Énigme 2 - RC Lens</title>
+  <title>Énigme 2 : Canadian Race</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
     body {
-      font-family: 'Roboto', sans-serif;
       min-height: 100vh;
       margin: 0;
-      color: #3B1F04;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      color: #262626;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 20px;
-      /* Dégradé radial sang et or */
-      background: radial-gradient(circle at 60% 30%, #FFD100 0%, #FFD100 40%, #D80027 100%);
-      transition: background 0.8s;
+      background: url('https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/505361b3-0d01-4474-8b6e-6e96d281cd8b.png') center bottom/cover no-repeat,
+      linear-gradient(to top,#45407F 0%, #f2f6fa 100%);
+      position: relative;
+      overflow: hidden;
     }
     h1 {
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.12);
     }
     p {
-      font-size: 1.4rem;
+      font-size: 1.33rem;
       max-width: 640px;
       line-height: 1.6;
       margin-bottom: 2.2rem;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.92);
       border-radius: 14px;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.09);
-      padding: 24px 14px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+      padding: 22px 14px;
       display: inline-block;
       text-shadow: none;
-      color: #3B1F04;
+      color: #262626;
     }
     .code-tip {
-      color: #D80027;
-      font-size: 1.12rem;
-      margin-top: 0.8em;
+      color: #3949ab;
+      font-size: 1.09rem;
+      margin-top: 0.2em;
       margin-bottom: 1.6em;
       font-weight: 700;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.2px;
     }
     input[type="text"] {
       font-size: 1.2rem;
       padding: 8px 12px;
       border-radius: 8px;
-      border: 2px solid #3B1F04;
+      border: 2px solid #262626;
       width: 130px;
       text-align: center;
       margin-right: 12px;
       outline: none;
       transition: border-color 0.3s;
-      background: #fffbe7;
+      background: #fafcff;
     }
     input[type="text"]:focus {
-      border-color: #FFD100;
-      box-shadow: 0 0 8px #FFD10088;
+      border-color: #5b7fa4;
+      box-shadow: 0 0 8px #5b7fa488;
     }
     button {
-      background-color: #3B1F04;
-      color: #FFD100;
+      background-color: #45407F;
+      color: #fff;
       border: none;
       padding: 10px 24px;
-      font-size: 1.13rem;
+      font-size: 1.14rem;
       border-radius: 30px;
       cursor: pointer;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      box-shadow: 0 4px 12px rgba(27,21,61,0.13);
       transition: background-color 0.3s;
     }
     button:hover {
-      background-color: #5B3A07;
+      background-color: #6a8cd9;
     }
     #message {
       margin-top: 20px;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 600;
       min-height: 1.7em;
     }
@@ -92,48 +93,49 @@
     }
     footer {
       margin-top: auto;
-      padding: 15px 0;
+      padding: 13px 0 8px 0;
       width: 100%;
-      background: rgba(59, 31, 4, 0.85);
-      color: #FFD100;
+      background: rgba(69, 64, 127, 0.97);
+      color: #eae8ec;
       font-size: 0.97rem;
       text-align: center;
       font-style: italic;
-      letter-spacing: 0.5px;
-      box-shadow: inset 0 1px 4px rgba(255,255,255,0.22);
+      letter-spacing: 0.4px;
+      box-shadow: 0 -1px 4px rgba(0,0,0,0.05);
     }
   </style>
 </head>
 <body>
-  <h1>Énigme 2 : La capacité du stade Bollaert-Delelis</h1>
+  <h1>Énigme 2 : Canadian Race</h1>
   <p>
-    Combien de places assises compte précisément le stade Bollaert-Delelis en 2025 ?<br />
+    Quel était le numéro de dossard de Loïc lors de la course Canadian Race?<br />
+    <strong>Donne le numéro exact.</strong>
   </p>
   <div class="code-tip">
-    Attention : <u>Il faudra utiliser le <b>premier chiffre</b> de ce nombre comme code de la boîte !</u>
+    Prends le premier chiffre de ce numéro, ce sera ton deuxième chiffre pour le code de la boîte à clé.
   </div>
   <div>
-    <input type="text" id="reponse" maxlength="5" placeholder="Nombre complet" aria-label="Réponse nombre" />
+    <input type="text" id="reponse" maxlength="4" placeholder="Numéro de dossard" aria-label="Numéro de dossard" />
     <button onclick="verifierReponse()">Valider</button>
   </div>
   <div id="message" role="alert" aria-live="polite"></div>
   <footer>
-    Bonne chance, les Sang et Or comptent sur toi ! ⚽❤️💛
+    Bonne chance pour cette course ! 🏃‍♂️🍁
   </footer>
   <script>
     function verifierReponse() {
-      const bonneReponse = '38223'; // nombre complet attendu
-      const reponse = document.getElementById('reponse').value.trim();
+      const bonneReponse = '1808';
       const message = document.getElementById('message');
+      const reponse = document.getElementById('reponse').value.trim();
       if (reponse === bonneReponse) {
         message.className = "good";
-        message.textContent = "Bravo ! C’est la bonne réponse.";
+        message.textContent = "Bravo ! Le numéro est bien 1808. Prends le '1' comme deuxième chiffre du code.";
       } else if (reponse === '') {
         message.className = "bad";
-        message.textContent = "Merci d’entrer un nombre.";
+        message.textContent = "Merci d’entrer le numéro de dossard.";
       } else {
         message.className = "bad";
-        message.textContent = "Ce n’est pas la bonne réponse, réessaie !";
+        message.textContent = "Ce n’est pas le bon numéro, réessaie !";
       }
     }
   </script>
